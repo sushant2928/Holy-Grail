@@ -1,0 +1,60 @@
+/* grid container */
+.holy-grail-grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "nav"
+    "aside"
+    "footer";
+}
+
+/* general column padding */
+.holy-grail-grid > * {
+  padding: 1rem;
+}
+
+/* assign columns to grid areas */
+.holy-grail-grid > header {
+  grid-area: header;
+  background: #f97171;
+}
+.holy-grail-grid > main {
+  grid-area: main;
+  background: orange;
+}
+.holy-grail-grid > nav {
+  grid-area: nav;
+  background: #f5d55f;
+}
+.holy-grail-grid > aside {
+  grid-area: aside;
+  background: #c5ed77;
+}
+.holy-grail-grid > footer {
+  grid-area: footer;
+  background: #72c2f1;
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+  .holy-grail-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "main main"
+      "nav aside"
+      "footer footer";
+  }
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .holy-grail-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "header header header header"
+      "nav main main aside"
+      "footer footer footer footer";
+  }
+}
